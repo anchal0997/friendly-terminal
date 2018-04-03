@@ -31,7 +31,7 @@ ipcMain.on('asynchronous-message', (event, arg) => {
 
 let win;
 app.on('ready', () => {
-  win = new BrowserWindow({width: 1000, height: 1000});
+  win = new BrowserWindow({width: 1800, height: 1800});
 
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -39,6 +39,6 @@ app.on('ready', () => {
     slashes: true
   }))
 
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 
 })

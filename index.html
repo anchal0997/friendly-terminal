@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Terminal</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background-color: black; color: white">
 
-<h1>Terminal</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div id="mainarea" style="font-size: large; height: 95vh; overflow-y: scroll" ></div>
+        </div>
+    </div>
 
-<div id="mainarea"></div>
+    <div class="row">
+        <div class="col" style="padding: 0px">
+            <input type="text" id="input" style="border-color: white; background-color: black; color: white; padding: 5px" class="form-control">
+        </div>
+        <div class="col-auto" style="">
+            <button id="send" class="btn btn-outline-secondary" style="height: 35px; color: white">RUN</button>
+        </div>
+    </div>
+</div>
 
-<input type="text" width="200px" id="input">
-<button id="send">Send</button>
+
 
 
 <!-- Insert this line above script imports  -->
@@ -22,8 +36,9 @@
       }
   </script>
 
-<script src="jquery-3.3.1.js"></script>
-<script src="index.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/index.js"></script>
 
 <!-- Insert this line after script imports -->
 <script>
