@@ -4,11 +4,15 @@
   "description": "A terminal app where there are friendly commands",
   "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apoorvaa Gupta <apoorvaagupta01@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^1.8.4"
+  },
+  "dependencies": {
+    "shelljs": "^0.8.1"
   }
 }

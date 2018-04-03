@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal</title>
+</head>
+<body style="background-color: black; color: white">
+
+<h1>Terminal</h1>
+
+<div id="mainarea"></div>
+
+<input type="text" width="200px" id="input">
+<button id="send">Send</button>
+
+
+<!-- Insert this line above script imports  -->
+<script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+      }
+  </script>
+
+<script src="jquery-3.3.1.js"></script>
+<script src="index.js"></script>
+
+<!-- Insert this line after script imports -->
+<script>
+    if (window.module)
+        module = window.module;
+  </script>
+
+
+</body>
+</html>
