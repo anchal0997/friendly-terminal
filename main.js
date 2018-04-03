@@ -1,32 +1,32 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path')
 const url = require('url');
-//const {shell} = require('electron')
-const {ipcMain} = require('electron')
-
 const shelljs = require('shelljs');
 
- //shell.openExternal('https://github.com')
-
-//shell.openItem('/Users/apoorvaagupta/Desktop/ce.pages')
 shelljs.cd('');
 
 ipcMain.on('initial-ping', (event, arg) => {
   event.sender.send('initial-reply', shelljs.pwd().stdout)
 })
 
+ipcMain.on('decode-cmd', (event, arg) => {
 
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  //shelljs.echo('Sorry, this script requires git');
+  let reply = '';
 
   if(arg === 'move up') {
-    console.log(shelljs.pwd().stdout);
     shelljs.cd('..');
-    console.log(shelljs.pwd().stdout);
-
-    event.sender.send('asynchronous-reply', 'received')
+  }else if(arg.toLowerCase() === 'help') {
+    reply = "move up : moves one level up in the directory structure<br>" +
+      "whereami : gives the current location in the file system<br>" +
+      "help : displays all the possible commands<br>"
+  } else if(arg.toLowerCase() === 'whereami') {
+    reply = shelljs.pwd().stdout + "<br>";
+  } else {
+    reply = "Wrong Command<br>"
   }
+
+  event.sender.send('decode-cmd-reply', reply);
+
 })
 
 let win;
@@ -39,6 +39,6 @@ app.on('ready', () => {
     slashes: true
   }))
 
-  //win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
 })
