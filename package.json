@@ -1,0 +1,14 @@
+{
+  "name": "friendly-terminal",
+  "version": "1.0.0",
+  "description": "A terminal app where there are friendly commands",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apoorvaa Gupta <apoorvaagupta01@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  }
+}
