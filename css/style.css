@@ -3,3 +3,7 @@
     word-wrap: break-word;
 }
 
+* {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
