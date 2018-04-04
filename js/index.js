@@ -17,16 +17,29 @@ $(document).ready(function () {
     var key = e.which;
     if(key == 13)  // the enter key code
     {
-      main.append("<span style='color: white'>" + inp.val() + "<br>");
-      ipcRenderer.send('decode-cmd', inp.val())
+
+      if(inp.val().toLowerCase() === 'clear'){
+        main.empty();
+        inp.val('');
+        ipcRenderer.send('initial-ping', 'initial');
+      }else {
+        main.append("<span style='color: white'>" + inp.val() + "<br>");
+        ipcRenderer.send('decode-cmd', inp.val())
+      }
     }
   });
 
   ipcRenderer.on('decode-cmd-reply', (event, arg) => {
     inp.val('');
     console.log("received");
-    main.append("<span style='color: #66D9EF'>" + arg);
     console.log(arg);
+    if(Array.isArray(arg)){
+      let s = arg.join('&nbsp;&nbsp;&nbsp;&nbsp;') ;
+      main.append("<span style='color: #66D9EF;'>" + s+"</span><br/>");
+    }else {
+      main.append("<span style='color: #66D9EF'>" + arg+"</span>");
+    }
+
     ipcRenderer.send('initial-ping', 'initial');
   })
 });
