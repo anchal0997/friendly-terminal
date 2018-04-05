@@ -2,7 +2,7 @@
 
 > A friendly terminal for beginners with simple commands for some of the frequently used shell commands. 
 
-![](https://drive.google.com/file/d/1lLapFIHpANmlUpIlTwFXIAmF5-a_XzpH/view?usp=sharing)
+![](https://github.com/apoorvaagupta/friendly-terminal/blob/master/Screen%20Shot%202018-04-05%20at%2012.37.24.png)
 
 ## Presently Implemented Commands
 
