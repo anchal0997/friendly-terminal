@@ -24,9 +24,9 @@ ipcMain.on('decode-cmd', (event, arg) => {
       "show all files : shows all files in the current directory<br>" +
       "print : prints the statement<br>" +
       "open : opens the specifies file<br>" +
-      "openw : opens the specified website in teh browser<br>" +
+      "openw : opens the specified website in the browser<br>" +
       "open ide : opens the Online IDE in the browser<br>" +
-      "clear : clears teh terminal<br>" +
+      "clear : clears the terminal<br>" +
       "help : displays all the possible commands<br>"
   } else if (arg.toLowerCase() === 'whereami') {
     reply = shelljs.pwd().stdout + "<br>";
